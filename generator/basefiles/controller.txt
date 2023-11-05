@@ -1,0 +1,65 @@
+const db = require("../db.js");
+
+const getById = async (req, res, next) => {
+    try {
+        const id = req.params.id;
+        return await #{ModelName}#.findByPk(id);
+    } catch (error) {
+        next(error);
+    }
+};
+
+const getAll = async (req, res, next) => {
+    try {
+        return await #{ModelName}#.findAll();
+    } catch (error) {
+        next(error);
+    }
+}
+
+const create = async (req, res, next) => {
+    try {
+        const data = req.body;
+        return await #{ModelName}#.create(data);
+    } catch (error) {
+        next(error);
+    }
+}
+
+const update = async (req, res, next) => {
+    try {
+        const id = req.params.id;
+        const data = req.body;
+        return await #{ModelName}#.update(data, { where: { id } });
+    } catch (error) {
+        next(error);
+    }
+}
+
+const partial_update = async (req, res, next) => {
+    try {
+        const id = req.params.id;
+        const data = req.body;
+        return await #{ModelName}#.update(data, { where: { id } });
+    } catch (error) {
+        next(error);
+    }
+}
+
+const remove = async (req, res, next) => {
+    try {
+        const id = req.params.id;
+        return await #{ModelName}#.destroy({ where: { id } });
+    } catch (error) {
+        next(error);
+    }
+}
+
+module.exports = {
+    getById,
+    getAll,
+    create,
+    update,
+    partial_update,
+    remove
+}

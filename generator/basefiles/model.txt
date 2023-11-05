@@ -1,0 +1,10 @@
+const #{ModelName}#_MODEL = (sequelize, Sequelize) => {
+    const #{ModelName}# = sequelize.define('#{ModelName}#', {//#{ModelPropertiesSection}#
+    });
+
+    return #{ModelName}#;
+}
+
+module.exports = {
+    #{ModelName}#_MODEL
+}
